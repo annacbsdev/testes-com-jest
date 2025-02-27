@@ -20,7 +20,7 @@ describe("Gerenciador de tarefas", () => {
             taskManager.clearTasks()
         })
         test("Erro ao add tarefa inválida", () => {
-            expect(taskManager.addTask(123)).toThrow("Erro ao adicionar tarefa")
+            expect(()=> taskManager.addTask(123)).toThrow("Erro ao adicionar tarefa")
         })
     }
 )
