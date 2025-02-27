@@ -8,19 +8,20 @@ describe("Gerenciador de tarefas", () => {
         taskManager = new TaskManager();
     });
 
-        test("Deve adicionar uma nova tarefa", () => {
-            taskManager.addTask("Estudar Jest")
-            expect(taskManager.getTasks()).toContain("Estudar Jest")
-        })
-        test("Deve iniciar uma lista vazia", () => {
-            expect(taskManager.getTasks()).toEqual([])
-        })
-        test("Deve limpar todas as tarefas", () => {
-            taskManager.addTask("Comprar pão")
-            taskManager.clearTasks()
-        })
-        test("Erro ao add tarefa inválida", () => {
-            expect(()=> taskManager.addTask(123)).toThrow("Erro ao adicionar tarefa")
-        })
+    test("Deve adicionar uma nova tarefa", () => {
+        taskManager.addTask("Estudar Jest")
+        expect(taskManager.getTasks()).toContain("Estudar Jest")
+    })
+    test("Deve iniciar uma lista vazia", () => {
+        expect(taskManager.getTasks()).toEqual([])
+    })
+    test("Deve limpar todas as tarefas", () => {
+        taskManager.addTask("Comprar pão")
+        taskManager.clearTasks()
+    })
+    test("Deve dar erro ao adicionar tarefa inválida", () => {
+        expect(()=> taskManager.addTask(123)).toThrow("Erro ao adicionar tarefa")
+    })
+
     }
 )
